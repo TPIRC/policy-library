@@ -1,0 +1,10 @@
+apiVersion: constraints.gatekeeper.sh/v1beta1
+kind: GCPSQLPublicIpConstraintV1
+metadata:
+  name: sql-deny-public-ip
+  annotations:
+    description: >-
+      Deny public IP addresses on Cloud SQL instances.
+      All database access must go through private networking.
+spec:
+  severity: high

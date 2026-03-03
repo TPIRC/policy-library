@@ -1,0 +1,15 @@
+apiVersion: constraints.gatekeeper.sh/v1beta1
+kind: GCPIAMAllowedPolicyMemberDomainsConstraintV2
+metadata:
+  name: iam-allow-domains
+  annotations:
+    description: >-
+      Restrict IAM policy members to tpirc.org users and GCP service accounts.
+      Prevents accidental grants to external identities.
+spec:
+  severity: high
+  parameters:
+    domains:
+      - tpirc.org
+      - gserviceaccount.com
+    allow_sub_domains: true
