@@ -1,0 +1,10 @@
+apiVersion: constraints.gatekeeper.sh/v1beta1
+kind: GCPStorageBucketPolicyOnlyConstraintV1
+metadata:
+  name: storage-uniform-access
+  annotations:
+    description: >-
+      Enforce uniform bucket-level access on all GCS buckets.
+      Disables legacy ACLs in favor of IAM-only access control.
+spec:
+  severity: high
